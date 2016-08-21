@@ -4,9 +4,7 @@ title:  "IceCTF writeup - Contract"
 date:   2016-08-19 18:13:49 +0200
 categories: writeup
 ---
-Screenshot:
-
-The challenge started out easy.
+The challenge started out very easy. But this was not to be so. Soon enough it became quite apparent.
 
 {% highlight ruby %}
 def print_hi(name)
@@ -16,8 +14,4 @@ print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Somewhere deep inside there was something. I could feel it. I decided to leave it for later and turned to the next system.

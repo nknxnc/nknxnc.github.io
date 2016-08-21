@@ -30,7 +30,6 @@ body {
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
@@ -62,6 +61,16 @@ img {
     background-size: cover;
     margin: -10px;
 }
+
+.post-link-container {
+    display: inline-block; 
+    padding: 10px; 
+    border-radius: 5px; 
+    background: black; 
+    margin: 5px; 
+    background:rgba(0,0,0,0.8);
+}
+ 
 #nkquote {
     font-family: 'Bentham';
     color: #9B9B9B;
@@ -123,13 +132,13 @@ a {
     &:visited {
         color: darken($brand-color, 15%);
     }
-
+}
+a.post-link {
     &:hover {
         color: $text-color;
-        text-decoration: underline;
+        font-size:30px
     }
 }
-
 
 
 /**
