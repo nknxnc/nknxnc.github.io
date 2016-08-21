@@ -18,7 +18,7 @@ $(document).ready(function () {
         posts.each(function(idx, li) {
             var post = $(li);
             var url = $.rand(data.response.posts);
-            url = url.photos[0].original_size.url;
+            url = url.photos[0].alt_sizes[1].url;
             post.css('background-image', 'url(' + url + ')');;
          });               
         });
