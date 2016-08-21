@@ -46,7 +46,22 @@ img {
     max-width: 100%;
     vertical-align: middle;
 }
-
+.background {
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: absolute;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: -10px;
+}
 
 
 /**

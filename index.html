@@ -1,12 +1,48 @@
 ---
 layout: page
 ---
+<script>
+$(document).ready(function () {
+    var link = "https://api.tumblr.com/v2/blog/neural-entropy/posts/photo?";
+    $.ajax({
+        type: "GET",
+        url: link,
+        dataType: "jsonp",
+        data: {
+            api_key: "ClAjag2DrKwJhbFY1aAAwqBUxEFBEOBwc7AzMwXlcaNlp3gZte"
+        }
+    }).done(function (data) {
+        
+        
+        var posts = $(".post-list li");
+        posts.each(function(idx, li) {
+            var post = $(li);
+            var url = $.rand(data.response.posts);
+            url = url.photos[0].original_size.url;
+            post.css('background-image', 'url(' + url + ')');;
+         });               
+        });
+    });
+
+
+//random function. 
+(function ($) {
+            $.rand = function (arg) {
+                if ($.isArray(arg)) {
+                    return arg[$.rand(arg.length)];
+                } else if (typeof arg == "number") {
+                    return Math.floor(Math.random() * arg);
+                }
+            };
+        })(jQuery);
+
+</script>
 
 <div class="home">
 
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
+      <li class="background">
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
         <h2>
