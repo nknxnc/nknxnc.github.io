@@ -3,11 +3,38 @@ layout: page
 title: About
 permalink: /about/
 ---
-'Consider your verdict,' the King said to the jury.<br>
-'Not yet, not yet!' the Rabbit hastily interrupted. 'There's a great deal to come before that!'<br>
-'Call the first witness,' said the King; and the White Rabbit blew three blasts on the trumpet, and called out, 'First witness!'<br>
-The first witness was the Hatter. He came in with a teacup in one hand and a piece of bread-and-butter in the other. 'I beg pardon, your Majesty,' he began, 'for bringing these in: but I hadn't quite finished my tea when I was sent for.'<br>
-<br>
-You can find this sites source code and other code at
-{% include icon-github.html username="nknxnc" %} /
-[nknxnc.github.io](https://github.com/nknxnc/nknxnc.github.io)
+<script>
+$(document).ready(function () {
+    var link = "https://api.tumblr.com/v2/blog/t-s-eliot/posts/quote?";
+    $.ajax({
+        type: "GET",
+        url: link,
+        dataType: "jsonp",
+        data: {
+            api_key: "ClAjag2DrKwJhbFY1aAAwqBUxEFBEOBwc7AzMwXlcaNlp3gZte"
+        }
+    }).done(function (data) {
+        
+        
+        var text = $("#nkquote");
+            var data = $.rand(data.response.posts);
+            data = data.text;
+            text.html(data);;
+        });
+    });
+
+
+//random function. 
+(function ($) {
+            $.rand = function (arg) {
+                if ($.isArray(arg)) {
+                    return arg[$.rand(arg.length)];
+                } else if (typeof arg == "number") {
+                    return Math.floor(Math.random() * arg);
+                }
+            };
+        })(jQuery);
+
+</script>
+<div id="nkquote">
+</div>
